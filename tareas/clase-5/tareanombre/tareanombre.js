@@ -1,6 +1,4 @@
 
-const edadUsuario = document.querySelector("#edadUsuario").value;
-const tituloPrincipal = document.querySelector("h1");
 const boton = document.querySelector("#boton");
 
 boton.onclick = function () {
@@ -8,6 +6,7 @@ boton.onclick = function () {
     let apellidoUsuario = document.querySelector("#apellidoUsuario").value;
     let edadUsuario = document.querySelector("#edadUsuario").value;
 
+    const tituloPrincipal = document.querySelector("h1");
     tituloPrincipal.innerText = `Bienvenido, ${nombreUsuario}  ${apellidoUsuario}`
 
     
