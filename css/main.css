@@ -7,6 +7,11 @@ html {
     font-size: 62.5%;
 }
 
+#resultado {
+    font-size: 20px;
+    font-weight: 900;
+}
+
 body {
     align-items: center;
     background: #EFEFEF;

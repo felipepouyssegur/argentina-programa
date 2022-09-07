@@ -123,10 +123,11 @@
 // TAREA: Ahora te toca a vos! — Obtené la etiqueta h1 de la página y guardala en una variable
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
+/* 
+const nuestroTitulo = document.querySelector("h1")
 
-
-
-
+console.log(nuestroTitulo.innerText)
+nuestroTitulo.innerText = "Hola r/Argentina Programa" */
 
 
 /*
@@ -147,6 +148,9 @@
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
 
+/* const mediaLinks = document.querySelectorAll('li');
+console.log(mediaLinks) */
+
 
 
 
@@ -155,6 +159,8 @@
 // elementos li que hay con mediaLinks.length
 
 
+/* const mediaLinks = document.querySelectorAll('li');
+console.log(mediaLinks.length) */
 
 
 
@@ -163,7 +169,12 @@
 //      sobre cada item de mediaLinks y mostralos en pantalla con console.log
 
 
+/* const mediaLinks = document.querySelectorAll('li');
+console.log(mediaLinks)
 
+for(i = 0; i < mediaLinks.length; i++) {
+    console.log(mediaLinks[i].innerText)
+} */
 
 
 
@@ -224,6 +235,22 @@
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
 
+const botonIngreso = document.querySelector("#ingresar");
+
+
+
+botonIngreso.onclick = function (){
+    const edadUsuario = Number(document.querySelector("#edad-usuario").value)
+    let textoResultado;
+    if (edadUsuario >= 18) {
+        textoResultado = "Podes ingresar"
+    } else {
+        textoResultado = "No ingresar"
+    }
+    document.querySelector("#resultado").innerText = textoResultado;
+    return false;
+    
+}
 
 
 
