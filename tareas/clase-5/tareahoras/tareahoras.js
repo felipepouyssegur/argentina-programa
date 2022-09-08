@@ -1,10 +1,12 @@
-const horasTotales = [];
-const minutosTotales = [];
-const segundosTotales = [];
+
 
 const botonCalcular = document.querySelector("#boton-calcular")
 
 botonCalcular.onclick = function () {
+    //DECLARO ARRAYS VACIOS
+    const horasTotales = [];
+    const minutosTotales = [];
+    const segundosTotales = [];
     //HORAS
     const horasClase1 = Number(document.querySelector("#horas-clase1").value);
     horasTotales.push(horasClase1);
@@ -73,12 +75,10 @@ botonCalcular.onclick = function () {
     let totalSegundos = segundosTotales.reduce((a, b) => a + b, 0);  //TOTAL SEGUNDOS
 
 
-    const minutosFinales = totalMinutos % 60;
-    console.log(minutosFinales)
-    const segundosFinales = totalSegundos % 60;
-    console.log(segundosFinales)
+    const segundosFinales = (totalSegundos % 60);
+    const minutosAdicionales = parseInt( totalSegundos / 60);
+    const minutosFinales = (minutosAdicionales + totalMinutos) % 60;
+    const horasAdicionales = parseInt((minutosAdicionales + totalMinutos) / 60);
 
-
-    document.querySelector("#vacio").innerText = `El total de sus videos es de ${totalHoras} horas, ${totalMinutos} minutos y ${totalSegundos} segundos.`
-
+    document.querySelector("#vacio").innerText = `El total de sus videos es de ${totalHoras + horasAdicionales} horas, ${minutosFinales} minutos y ${segundosFinales} segundos.`;
 }
