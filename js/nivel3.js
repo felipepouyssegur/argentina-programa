@@ -170,12 +170,13 @@ console.log(mediaLinks.length) */
 
 
 /* const mediaLinks = document.querySelectorAll('li');
-console.log(mediaLinks)
+console.log(mediaLinks.textContent) */
 
-for(i = 0; i < mediaLinks.length; i++) {
+
+/* for(i = 0; i < mediaLinks.length; i++) {
     console.log(mediaLinks[i].innerText)
-} */
-
+} 
+ */
 
 
 /*
@@ -235,7 +236,7 @@ for(i = 0; i < mediaLinks.length; i++) {
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
 
-const botonIngreso = document.querySelector("#ingresar");
+/* const botonIngreso = document.querySelector("#ingresar");
 
 
 
@@ -250,7 +251,7 @@ botonIngreso.onclick = function (){
     document.querySelector("#resultado").innerText = textoResultado;
     return false;
     
-}
+} */
 
 
 
