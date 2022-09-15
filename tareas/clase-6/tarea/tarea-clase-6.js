@@ -90,3 +90,66 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor sala
 
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 */
+
+let botonAgregar = document.createElement("button");
+let botonBorrar = document.createElement("button");
+let botonCalcularSalario = document.createElement("button")
+
+let div = document.querySelector("#botones-salario")
+
+botonAgregar.textContent = "Agregar inputs salario"
+botonBorrar.textContent = "Borrar inputs"
+botonCalcularSalario.textContent = "Calcular Salario"
+
+div.appendChild(botonAgregar)
+div.appendChild(botonBorrar)
+div.appendChild(botonCalcularSalario)
+
+
+botonAgregar.onclick = function () {
+    for(i = 1; i <= integrantesFamilia; i++) {
+        let body = document.querySelector("body");
+    
+        let labelSalario = document.createElement("label")
+        let formSalario = document.createElement("input")
+        let br = document.createElement("br")
+
+        formSalario.type = "number"
+        formSalario.className = `inputsalario${i}`
+
+    
+        labelSalario.innerText = `Pone el salario ANUAL de tu familiar N° ${i}`
+    
+        body.appendChild(labelSalario)
+        labelSalario.appendChild(formSalario)
+        body.appendChild(br)
+    }
+    
+}
+
+
+let arraySalarios = [];
+
+botonCalcularSalario.onclick = function () {
+    for(i = 1; i <= integrantesFamilia; i++) {
+    let resultadoSalarios = Number(document.querySelector(`.inputsalario${i}`).value);
+    arraySalarios.push(resultadoSalarios)
+    }
+
+let div = document.querySelector("#resultado-salarios")
+let salarioMasAlto = document.createElement("h4")
+let salarioMasBajo = document.createElement("h4")
+let salarioPromedio = document.createElement("h4")
+
+div.appendChild(salarioMasAlto)
+div.appendChild(salarioMasBajo)
+div.appendChild(salarioPromedio)
+
+salarioMasAlto.innerText = `Mayor salario: $${calcularMasGrande(arraySalarios)}`
+salarioMasBajo.innerText = `Menor salario: $${calcularMasPequeño(arraySalarios)}`
+salarioPromedio.innerText = `El promedio de salarios es: $${calcularPromedio(arraySalarios)}`
+
+}
+
+
+
